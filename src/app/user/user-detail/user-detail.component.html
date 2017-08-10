@@ -1,0 +1,13 @@
+<div>
+<div class="text-center">
+  <button class="btn btn-info" (click)="goBack()">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    Back
+  </button>
+</div>
+<ul class="nav nav-pills">
+  <li role="presentation" class="active" routerLinkActive="active"><a [routerLink]="['profile']">Profile</a></li>
+  <li role="presentation" routerLinkActive="active"><a [routerLink]="['change-password']">Change Password</a></li>
+</ul>
+<router-outlet></router-outlet>
+</div>

@@ -1,0 +1,5 @@
+<button class="btn btn-xs" [ngClass]="{'btn-primary custom-btn': !isVerified, 'btn-success': isVerified}" (click)="verifyUser(userId)" [disabled]=isVerified>
+    <span *ngIf=isVerified>Verified</span>
+    <span *ngIf=!isVerified>Verify</span>
+</button>
+<button class="btn btn-xs btn-primary" (click)="goToUserDetail(userId)">View</button>

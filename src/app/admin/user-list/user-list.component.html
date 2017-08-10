@@ -1,0 +1,31 @@
+<div class="container">
+  <h3 class="text-center">Users List</h3>
+  <div *ngIf="usersList.length; else noRecord">
+    <ngb-alert *ngIf=notificationMessage type="success" (close)="notificationMessage = ''">{{notificationMessage}}</ngb-alert>
+    <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>Action <button class="btn btn-danger btn-xs" (click)="resetUsers()" [disabled]=!isResetRequired>Reset</button></th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of usersList">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.mobile}}</td>
+          <td><verify-user [isVerified]="user.isVerified" [userId]="user.id" (onVerifyUser)="userVerified($event)"></verify-user></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noRecord>
+    <ngb-alert type="info" [dismissible]="false">No Record Found!</ngb-alert>
+  </ng-template>
+</div>
