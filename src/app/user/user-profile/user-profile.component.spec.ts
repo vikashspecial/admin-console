@@ -24,15 +24,6 @@ describe('UserProfileComponent', () => {
   });
 
   it('should be created', () => {
-    component.userData = {
-        id: 1,
-        name: "vikash",
-        age: 18,
-        email: "test@gmail.com",
-        mobile: 534534,
-        isVerified: true
-    };
-    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });
