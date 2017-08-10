@@ -1,0 +1,33 @@
+<div class="container add-user">
+  <form class="form-horizontal" [formGroup]="form" (ngSubmit)="addUser(form.value)"> 
+    <div class="form-group">
+      <label for="name" class="col-sm-2 col-sm-offset-2 control-label">Name:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" formControlName="name" name="name" id="name" placeholder="Full name" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="age" class="col-sm-2 col-sm-offset-2 control-label">Age</label>
+      <div class="col-sm-4">
+        <input type="number" class="form-control" formControlName="age" id="age" min="12" max="60" pattern="\d+" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email" class="col-sm-2 col-sm-offset-2 control-label">Email:</label>
+      <div class="col-sm-4">
+        <input type="email" class="form-control" formControlName="email" id="email" placeholder="example@gmail.com" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="mobile" class="col-sm-2 col-sm-offset-2 control-label">Mobile:</label>
+      <div class="col-sm-4">
+        <input type="phone" class="form-control" formControlName="mobile" name="mobile" id="mobile" pattern="\d+" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-4 col-sm-8">
+        <button type="submit" class="btn btn-default" [disabled]="!form.valid">Add</button>
+      </div>
+    </div>
+  </form>
+</div>
